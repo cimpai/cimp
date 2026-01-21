@@ -46,7 +46,6 @@ CIMP can be used:
 ## What CIMP is not
 
 CIMP is **not**:
-
 - a CI/CD system
 - a project management tool
 - a ticketing system
@@ -56,22 +55,42 @@ CIMP is **not**:
 CIMP does not automate decisions.  
 It makes decisions **explicit and traceable**.
 
+See:  
+👉 [`docs/philosophy/what-cimp-is-not.md`](docs/philosophy/what-cimp-is-not.md)
+
 ---
 
 ## Core concepts
 
-CIMP is built around a small set of fundamental concepts:
+CIMP is built around a small set of fundamental concepts.
 
-- **Intent** — why a change is made
-- **Scope** — what may change and what must not
-- **Constraints / Invariants** — boundaries that must hold
-- **Change Plan** — how intent becomes execution
-- **Decision** — an explicit commitment with an owner
-- **Incident** — when reality diverges from expectations
-- **Remediation** — a deliberate corrective change
-- **Architecture Memory** — preserved context over time
+Each concept is intentionally minimal and explicitly defined.
 
-These concepts are technology-agnostic and apply equally to:
+- **Intent** — why a change exists  
+  [`docs/concepts/intent.md`](docs/concepts/intent.md)
+
+- **Scope** — what may change and what must not  
+  [`docs/concepts/scope.md`](docs/concepts/scope.md)
+
+- **Constraints / Invariants** — boundaries that must hold  
+  [`docs/concepts/constraints.md`](docs/concepts/constraints.md)
+
+- **Change** — a deliberate modification that alters behavior or risk  
+  [`docs/concepts/change.md`](docs/concepts/change.md)
+
+- **Decision** — an explicit commitment under uncertainty  
+  [`docs/concepts/decisions.md`](docs/concepts/decisions.md)
+
+- **Incident** — a significant divergence from expected behavior  
+  [`docs/concepts/incident.md`](docs/concepts/incident.md)
+
+- **Remediation** — corrective action treated as a Change  
+  [`docs/concepts/remediation.md`](docs/concepts/remediation.md)
+
+- **Architecture Memory** — preserved reasoning over time  
+  [`docs/concepts/architecture-memory.md`](docs/concepts/architecture-memory.md)
+
+These concepts apply equally to:
 - code
 - infrastructure
 - data
@@ -80,39 +99,47 @@ These concepts are technology-agnostic and apply equally to:
 
 ---
 
-## How CIMP is used
+## Lifecycles
 
-CIMP can be adopted incrementally.
+CIMP defines two symmetric lifecycles.
 
-Common entry points:
-- writing a **Change Plan** before risky changes
-- documenting **invariants** explicitly
-- treating incidents as structured inputs to future changes
-- preserving key decisions instead of losing them in chat logs
+They describe how change and failure evolve over time.
 
-No tooling is required to start.
+- **Change Lifecycle** — from Intent to consequences  
+  [`docs/lifecycle/change-lifecycle.md`](docs/lifecycle/change-lifecycle.md)
 
----
-
-## Repository structure
-
-This repository defines the **canonical CIMP framework**:
-
-- `docs/philosophy/` — why CIMP exists
-- `docs/concepts/` — core terminology
-- `docs/lifecycle/` — change and incident lifecycles
-- `docs/governance/` — constraints, policies, accountability
-
-Practical templates and real examples live in separate repositories.
+- **Incident Lifecycle** — from emergence to memory  
+  [`docs/lifecycle/incident-lifecycle.md`](docs/lifecycle/incident-lifecycle.md)
 
 ---
 
-## Related repositories
+## Why changes fail
 
-- **cimp-practices** — how to apply CIMP without tools  
-- **cimp-examples** — real Change Plans and incidents  
-- **cimp-cli** — tooling (planned)  
-- **cimp-ui** — visualization and history (planned)
+CIMP is grounded in analysis, not prescription.
+
+A detailed explanation of structural failure modes can be found here:
+
+👉 [`docs/philosophy/why-changes-fail.md`](docs/philosophy/why-changes-fail.md)
+
+---
+
+## Governance
+
+CIMP prioritizes stability and clarity over speed.
+
+The governance model defines how the framework evolves:
+
+👉 [`GOVERNANCE.md`](GOVERNANCE.md)
+
+---
+
+## Practical application
+
+CIMP does not require tooling.
+
+Practical templates and usage patterns live in a separate repository:
+
+👉 **cimp-practices** (templates, examples, adaptations)
 
 ---
 
@@ -120,9 +147,9 @@ Practical templates and real examples live in separate repositories.
 
 CIMP is under active development as an open framework.
 
-Concepts are stable.  
-Practices evolve.  
-Tooling is optional.
+- Concepts are stable
+- Practices evolve
+- Tooling is optional
 
 ---
 
