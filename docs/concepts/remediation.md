@@ -127,6 +127,93 @@ Without memory, remediation erases evidence.
 
 ---
 
+## Replay as remediation
+
+Replay is a **special form of remediation** applied to historical data, events, or effects of a Change.
+
+Replay does not fix the past.  
+It corrects the system’s **current state** by reprocessing prior actions under updated rules or assumptions.
+
+---
+
+### When replay is used
+
+Replay is appropriate when:
+- incorrect data has already been persisted
+- business rules were wrong or incomplete
+- historical effects must be recalculated
+- auditability and traceability must be preserved
+
+Replay is common in:
+- billing systems
+- ledgers
+- analytics pipelines
+- event-driven architectures
+
+---
+
+### Replay is still a Change
+
+Replay modifies:
+- current system state
+- balances or aggregates
+- derived data
+- user-visible outcomes
+
+Therefore, replay must be treated as a **governed Change**, not a background operation.
+
+---
+
+### Scope-limited by design
+
+Replay is often **deliberately limited in scope**.
+
+Limitations may be based on:
+- time ranges
+- affected entities
+- business decisions
+- acceptable impact
+
+Limiting replay scope is a valid decision,  
+even when broader correction is technically possible.
+
+---
+
+### Replay and idempotency
+
+Replay must be:
+- idempotent
+- repeatable
+- auditable
+
+Without these properties, replay increases risk instead of reducing it.
+
+---
+
+### Replay and accountability
+
+Replay requires:
+- explicit Intent
+- documented scope
+- business approval when impact is material
+- clear ownership
+
+Silent or implicit replay undermines trust.
+
+---
+
+### Replay and learning
+
+Replay completes remediation only when:
+- the original Incident is understood
+- incorrect assumptions are documented
+- future Changes are informed
+
+Replay without learning resets the system  
+but preserves the conditions for recurrence.
+
+---
+
 ## Final note
 
 Incidents are expensive.
