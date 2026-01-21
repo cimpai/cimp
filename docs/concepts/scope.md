@@ -87,6 +87,31 @@ Changing Scope is itself a Change.
 
 ---
 
+## Business-limited scope
+
+Scope may be **deliberately limited by business decision**, even when broader correction or change is technically possible.
+
+Such limitations may be based on:
+- acceptable financial impact
+- contractual or customer relationships
+- regulatory or legal considerations
+- operational risk
+- timing or coordination constraints
+
+A business-limited scope is not a technical compromise.  
+It is an explicit trade-off made under accountability.
+
+---
+
+Limiting scope by business decision must be:
+- intentional
+- documented
+- linked to a responsible owner
+
+Undocumented scope limitation turns governance into ambiguity.
+
+---
+
 ## Scope under pressure
 
 Under urgency, Scope is often relaxed first.
