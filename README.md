@@ -139,7 +139,9 @@ CIMP does not require tooling.
 
 Practical templates and usage patterns live in a separate repository:
 
-👉 **cimp-practices** (templates, examples, adaptations)
+👉 [`cimp-practices`](https://github.com/cimpai/cimp-practices)
+
+This repository is **not part of the canon** and does not define or modify canonical concepts.
 
 ---
 
