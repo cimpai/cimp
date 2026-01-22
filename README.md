@@ -64,12 +64,16 @@ See:
 
 CIMP builds upon and synthesizes ideas from established practices, including:
 
-- **Architecture Decision Records (ADR)** — explicit recording of architectural decisions
-- **RFC processes** — structured change proposals and review
-- **Post-mortem culture** — learning from incidents and failures
-- **Invariant-driven design** — defining and protecting system boundaries
+- **Architecture Decision Records (ADR)** — explicit recording of architectural decisions  
+  ([Michael Nygard's original ADR format](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions))
+- **RFC processes** — structured change proposals and review  
+  (inspired by IETF RFC process and internal RFC practices at tech companies)
+- **Post-mortem culture** — learning from incidents and failures  
+  (practices from SRE and incident response communities)
+- **Design by Contract / Invariant-driven design** — defining and protecting system boundaries  
+  (concepts from Eiffel, formal methods, and constraint-based design)
 
-CIMP’s contribution is not the invention of new practices,  
+CIMP's contribution is not the invention of new practices,  
 but the **unified framework** that connects Intent, Change, Decisions,
 Incidents, and Architecture Memory into a single governance system.
 
