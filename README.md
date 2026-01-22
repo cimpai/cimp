@@ -60,6 +60,21 @@ See:
 
 ---
 
+## Related Work & Inspiration
+
+CIMP builds upon and synthesizes ideas from established practices, including:
+
+- **Architecture Decision Records (ADR)** — explicit recording of architectural decisions
+- **RFC processes** — structured change proposals and review
+- **Post-mortem culture** — learning from incidents and failures
+- **Invariant-driven design** — defining and protecting system boundaries
+
+CIMP’s contribution is not the invention of new practices,  
+but the **unified framework** that connects Intent, Change, Decisions,
+Incidents, and Architecture Memory into a single governance system.
+
+---
+
 ## Core concepts
 
 CIMP is built around a small set of fundamental concepts.
