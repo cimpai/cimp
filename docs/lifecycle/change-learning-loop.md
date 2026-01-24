@@ -1,23 +1,20 @@
 # Change Learning Loop
 
-This document defines the **canonical learning loop in CIMP**.
+This document defines the **Change Learning Loop** as a canonical lifecycle
+in CIMP.
 
-It describes how a system turns changes, failures, and surprises
-into **durable, enforceable knowledge** — not just experience.
+The Change Learning Loop describes how experience from changes and incidents
+is converted into **durable, enforceable system knowledge** over time.
 
-This is not a team ritual.  
-This is not a retrospective format.  
-This is not a best-practice catalog.
-
-This is a **system-level learning mechanism**.
+Learning in CIMP is a property of the system, not of individuals or teams.
 
 ---
 
-## The Core Loop
+## Canonical loop
 
-Every meaningful change in a system may trigger learning.
+Every meaningful change or incident may introduce new knowledge.
 
-CIMP defines the following canonical chain:
+CIMP defines the following canonical learning loop:
 
 ```
 CHANGE_PLAN
@@ -33,155 +30,269 @@ CHECKLIST / CONSTRAINT
 FOLLOW-UP CHANGE (if needed)
 ```
 
+Each step has a **distinct and non-overlapping responsibility**.
 
-Each step has a **single responsibility**.
-Skipping steps breaks the learning loop.
-
----
-
-## Step Definitions
-
-### 1. CHANGE_PLAN — Controlled Intent
-
-A CHANGE_PLAN defines:
-- what we intend to change
-- what must not be broken (invariants)
-- how the change will be executed and rolled back
-
-A change without a plan is an uncontrolled experiment.
+If any step is skipped, learning is considered incomplete.
 
 ---
 
-### 2. RETRO — System Feedback
+## Lifecycle elements
 
-A RETRO answers:
+### CHANGE_PLAN — Intent under constraint
+
+A CHANGE_PLAN fixes:
+- the intent of the change
+- the scope of impact
+- the invariants that must not be violated
+- the conditions for rollback or termination
+
+A change without an explicit plan is an uncontrolled change
+and cannot be safely learned from.
+
+---
+
+### RETRO — Observation of outcomes
+
+A RETRO records:
 - what actually happened
-- what worked
-- what failed
-- what surprised us
+- what outcomes were observed
+- what deviated from expectations
 
-A RETRO:
-- does not assign blame
-- does not describe execution
-- does not fix the problem
+A RETRO does not:
+- assign blame
+- prescribe solutions
+- perform remediation
 
-Its purpose is **reflection, not action**.
-
----
-
-### 3. INCIDENT_LESSON — Generalized Knowledge
-
-An INCIDENT_LESSON extracts **reusable knowledge** from a failure or surprise.
-
-It captures:
-- the failure pattern
-- violated or missing invariants
-- detection gaps
-- preventive signals
-
-It is:
-- not an incident report
-- not a root cause analysis
-- not a fix description
-
-A lesson must survive beyond the specific incident.
+Its role is to capture **observations**, not decisions.
 
 ---
 
-### 4. PRACTICE — System Rule
+### INCIDENT_LESSON — Generalized knowledge
 
-A PRACTICE turns a lesson into a **normative rule**.
+An INCIDENT_LESSON extracts knowledge that is:
+- independent of a specific implementation
+- applicable beyond a single incident
+- expressed in terms of invariants, patterns, and detection gaps
+
+An INCIDENT_LESSON is not:
+- an incident report
+- a root cause analysis
+- a remediation plan
+
+A lesson that cannot be reused is not considered a lesson.
+
+---
+
+### PRACTICE — Normative rule
+
+A PRACTICE encodes a lesson as a **normative rule**.
 
 A practice:
-- is imperative (“must / must not”)
-- protects an invariant
-- is testable
-- may allow explicit, documented exceptions
+- states what must or must not be done
+- protects one or more invariants
+- is testable or reviewable
+- may allow explicitly documented exceptions
 
-Practices define **how the system is expected to behave going forward**.
+Practices define expected system behavior for future changes.
 
 ---
 
-### 5. CHECKLIST / CONSTRAINT — Enforcement
+### CHECKLIST / CONSTRAINT — Enforcement
 
-Practices are only useful if they are enforced.
+A PRACTICE only becomes effective when enforced.
 
 Enforcement mechanisms include:
 - review checklists
-- CI/CD validation
-- schema constraints
-- monitoring rules
+- automated validation
+- schema or runtime constraints
+- monitoring and alerting rules
 
-A practice without enforcement is advice.
-Advice is not learning.
-
----
-
-### 6. FOLLOW-UP CHANGE — Structural Correction (Optional)
-
-Some lessons require structural changes:
-- new tooling
-- new tests
-- new constraints
-- refactoring
-
-In such cases, a new CHANGE_PLAN is created,
-and the loop starts again.
+A rule that is not enforced is advisory.
+Advisory rules do not constitute learning.
 
 ---
 
-## What Counts as Learning
+### FOLLOW-UP CHANGE — Structural response
 
-In CIMP:
+Some lessons require structural changes to the system.
 
-> A retrospective that does not produce a lesson,  
-> a lesson that does not become a practice,  
-> and a practice that is not enforced  
-> **do not count as learning**.
+In such cases, a new CHANGE_PLAN is created to:
+- introduce new constraints
+- add missing validation
+- modify architecture or tooling
 
-Learning is only complete when future changes
-are **structurally prevented** from repeating the same class of failure.
-
----
-
-## How This Differs from Agile Retrospectives
-
-Agile retrospectives usually stop here:
-
-```
-CHANGE
-↓
-RETRO
-↓
-“We learned something”
-```
-
-CIMP continues until:
-- the lesson is explicit
-- the rule is written
-- the rule is enforced
-
-CIMP is not about remembering better.
-It is about **making forgetting impossible**.
+This initiates a new iteration of the learning loop.
 
 ---
 
-## Relationship to Practices in This Repository
+## Learning criteria
 
-Practices in this repository are expected to be:
-- outputs of the Change Learning Loop
-- derived from real changes or incidents
-- justified by lessons, not opinions
+In CIMP, learning is only considered complete when:
 
-A practice without a traceable origin
-is considered weak and temporary.
+- experience produces an explicit lesson
+- the lesson becomes a normative rule
+- the rule is enforced by the system
+
+A retrospective without a lesson,  
+a lesson without a practice,  
+or a practice without enforcement  
+**does not count as learning**.
 
 ---
 
-## Design Principle
+## Relationship to practices
 
-> Systems do not learn by reflection.  
-> Systems learn by changing their rules.
+Practices in CIMP are **outputs** of the Change Learning Loop.
 
-The Change Learning Loop is how CIMP
-turns experience into system behavior.
+A practice without a traceable origin in:
+- a change
+- an incident
+- or a retrospective
+
+is considered provisional and subject to revision.
+
+---
+
+## Canonical observation
+
+Systems do not learn by reflection alone.
+
+Systems learn when experience
+results in **changes to the rules that govern future behavior**.
+
+The Change Learning Loop defines how CIMP
+prevents systems from forgetting what they have learned.
+
+
+Each step has a **distinct and non-overlapping responsibility**.
+
+If any step is skipped, learning is considered incomplete.
+
+---
+
+## Lifecycle elements
+
+### CHANGE_PLAN — Intent under constraint
+
+A CHANGE_PLAN fixes:
+- the intent of the change
+- the scope of impact
+- the invariants that must not be violated
+- the conditions for rollback or termination
+
+A change without an explicit plan is an uncontrolled change
+and cannot be safely learned from.
+
+---
+
+### RETRO — Observation of outcomes
+
+A RETRO records:
+- what actually happened
+- what outcomes were observed
+- what deviated from expectations
+
+A RETRO does not:
+- assign blame
+- prescribe solutions
+- perform remediation
+
+Its role is to capture **observations**, not decisions.
+
+---
+
+### INCIDENT_LESSON — Generalized knowledge
+
+An INCIDENT_LESSON extracts knowledge that is:
+- independent of a specific implementation
+- applicable beyond a single incident
+- expressed in terms of invariants, patterns, and detection gaps
+
+An INCIDENT_LESSON is not:
+- an incident report
+- a root cause analysis
+- a remediation plan
+
+A lesson that cannot be reused is not considered a lesson.
+
+---
+
+### PRACTICE — Normative rule
+
+A PRACTICE encodes a lesson as a **normative rule**.
+
+A practice:
+- states what must or must not be done
+- protects one or more invariants
+- is testable or reviewable
+- may allow explicitly documented exceptions
+
+Practices define expected system behavior for future changes.
+
+---
+
+### CHECKLIST / CONSTRAINT — Enforcement
+
+A PRACTICE only becomes effective when enforced.
+
+Enforcement mechanisms include:
+- review checklists
+- automated validation
+- schema or runtime constraints
+- monitoring and alerting rules
+
+A rule that is not enforced is advisory.
+Advisory rules do not constitute learning.
+
+---
+
+### FOLLOW-UP CHANGE — Structural response
+
+Some lessons require structural changes to the system.
+
+In such cases, a new CHANGE_PLAN is created to:
+- introduce new constraints
+- add missing validation
+- modify architecture or tooling
+
+This initiates a new iteration of the learning loop.
+
+---
+
+## Learning criteria
+
+In CIMP, learning is only considered complete when:
+
+- experience produces an explicit lesson
+- the lesson becomes a normative rule
+- the rule is enforced by the system
+
+A retrospective without a lesson,  
+a lesson without a practice,  
+or a practice without enforcement  
+**does not count as learning**.
+
+---
+
+## Relationship to practices
+
+Practices in CIMP are **outputs** of the Change Learning Loop.
+
+A practice without a traceable origin in:
+- a change
+- an incident
+- or a retrospective
+
+is considered provisional and subject to revision.
+
+---
+
+## Canonical observation
+
+Systems do not learn by reflection alone.
+
+Systems learn when experience
+results in **changes to the rules that govern future behavior**.
+
+The Change Learning Loop defines how CIMP
+prevents systems from forgetting what they have learned.
