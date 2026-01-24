@@ -5,7 +5,7 @@
 CIMP sits between **intent** and **execution**.
 
 It does not replace engineering practices, tools, or teams.  
-It makes change **intentional, accountable, and observable**.
+It makes change **intentional, accountable, observable, and learnable**.
 
 ---
 
@@ -20,6 +20,10 @@ Typical symptoms:
 - incidents are investigated, but lessons are lost
 - decisions disappear after the PR is merged
 
+In most systems, learning stops at investigation.
+Fixes are applied, but rules do not change.
+The same class of failure returns in a different form.
+
 CIMP exists to address this gap.
 
 It provides a **shared language and structure** for changes — before, during, and after they happen.
@@ -33,8 +37,11 @@ CIMP is:
 - a **conceptual framework**
 - a **set of governance principles**
 - a **shared vocabulary** for change
-- a **lifecycle model** for intent, execution, and incidents
+- a **lifecycle model** for intent, execution, incidents, and learning
 - a way to preserve **architectural memory over time**
+
+CIMP defines how experience from changes and incidents
+is converted into durable system knowledge over time.
 
 CIMP can be used:
 - without AI
@@ -120,7 +127,7 @@ These concepts apply equally to:
 
 ## Lifecycles
 
-CIMP defines two symmetric lifecycles.
+CIMP defines three related lifecycles.
 
 They describe how change and failure evolve over time.
 
@@ -129,6 +136,9 @@ They describe how change and failure evolve over time.
 
 - **Incident Lifecycle** — from emergence to memory  
   [`docs/lifecycle/incident-lifecycle.md`](docs/lifecycle/incident-lifecycle.md)
+
+- **Change Learning Loop** — how experience becomes rules  
+  [`docs/lifecycle/change-learning-loop.md`](docs/lifecycle/change-learning-loop.md)
 
 ---
 
@@ -161,6 +171,9 @@ Practical templates and usage patterns live in a separate repository:
 👉 [`cimp-practices`](https://github.com/cimpai/cimp-practices)
 
 This repository is **not part of the canon** and does not define or modify canonical concepts.
+
+Practices and checklists are treated as **outputs of learning**,
+not opinions or best practices.
 
 ---
 
