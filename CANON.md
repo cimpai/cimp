@@ -13,6 +13,9 @@ The CIMP Canon is a **system of concepts, definitions, and principles**
 that governs how changes are understood, evaluated, and remembered
 in complex systems.
 
+Remembering includes the conversion of experience from changes and incidents
+into durable rules, constraints, and architectural memory over time.
+
 The canon defines:
 - how Intent is formed
 - how Change is bounded and governed
@@ -45,6 +48,7 @@ The following documents constitute **CIMP Canon v1.0**.
 ### Lifecycles
 - `docs/lifecycle/change-lifecycle.md`
 - `docs/lifecycle/incident-lifecycle.md`
+- `docs/lifecycle/change-learning-loop.md`
 
 ### Governance
 - `GOVERNANCE.md`
